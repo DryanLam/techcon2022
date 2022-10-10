@@ -8,7 +8,7 @@
 			<!-- For debugging selectors, it's recommend to set the following environment variable -->
 			<PWDEBUG>console</PWDEBUG>
 			<!--<DEBUG>pw:api</DEBUG>-->
-			<!--<PWDEBUG>10000</PWDEB-->UG>
+			<!--<PWDEBUG>10000</PWDEBUG>-->
 		</EnvironmentVariables>
 	</RunConfiguration>
 

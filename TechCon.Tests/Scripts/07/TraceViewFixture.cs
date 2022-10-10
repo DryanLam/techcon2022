@@ -82,5 +82,12 @@ namespace TechCon.Tests.Scripts
                 BaseURL = Params.PortalUrl
             };
         }
+
+
+
+
+
+
+        // ./playwright.ps1 show-trace trace.zip
     }
 }
