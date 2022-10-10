@@ -1,7 +1,6 @@
 ﻿using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
-using TechCon.Tests.Utils.Helpers;
 
 namespace TechCon.Tests.Scripts
 {
@@ -14,10 +13,10 @@ namespace TechCon.Tests.Scripts
             await Page.GotoAsync("/iframe");
 
             // 2. Locate an iframe
-            var val = Page.FrameLocator("iframe[title='Rich Text Area']").Locator("#tinymce");
+            var textLocator = Page.FrameLocator("iframe[title='Rich Text Area']").Locator("#tinymce");
 
             // VP: Verify that the iframe is containing 'Your content goes here.' value
-            await Expect(val).ToContainTextAsync("Your content goes here.");
+            await Expect(textLocator).ToContainTextAsync("Your content goes here.");
         }
 
         [Test]
@@ -27,11 +26,14 @@ namespace TechCon.Tests.Scripts
             await Page.GotoAsync("/nested_frames");
 
             // 2. Locate a frame in the middle
-            var val = Page.FrameLocator("frame[name='frame-top']").FrameLocator("frame[name='frame-middle']").Locator("#content");
+            var middleLocator = Page.FrameLocator("frame[name='frame-top']").FrameLocator("frame[name='frame-middle']").Locator("#content");
 
             // VP: Verify that the middle frame is containing 'MIDDLE' value
-            await Expect(val).ToContainTextAsync("MIDDLE");
+            await Expect(middleLocator).ToContainTextAsync("MIDDLE");
         }
+
+
+
 
 
 
