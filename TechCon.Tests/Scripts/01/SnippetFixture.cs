@@ -7,7 +7,7 @@ namespace TechCon.Tests.Scripts
     public class SnippetFixture
     {
         [Test]
-        public async Task One001()
+        public async Task SnippetCode()
         {
             // CONFIGURATION
             using var playwright = await Playwright.CreateAsync();
@@ -52,7 +52,7 @@ namespace TechCon.Tests.Scripts
 
 
         [Test]
-        public async Task One002()
+        public async Task SlowMotion()
         {
             // CONFIGURATION
             using var playwright = await Playwright.CreateAsync();
