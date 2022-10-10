@@ -44,8 +44,7 @@ namespace TechCon.Tests.Scripts
                     Width = 1920,
                     Height = 1080
                 },
-                BaseURL = "https://the-internet.herokuapp.com",
-                StorageStatePath = $"{IOHelpers.ProjectPath}/Settings/login.json"
+                BaseURL = "https://the-internet.herokuapp.com"
             };
         }
     }
