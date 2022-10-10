@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TechCon.Tests.Data;
 using TechCon.Tests.Utils.Helpers;
@@ -16,19 +17,40 @@ namespace TechCon.Tests.Scripts._03
         [Test]
         public async Task Upload_ByPath()
         {
-            await Page.GotoAsync(Params.PortalUrl);
+            // 1. Navigate to 'Add Employee' page
+            await Page.GotoAsync("/web/index.php/pim/addEmployee");
 
-            // 2. Click 'Admin' on left side panel to go to 'Admin/User Management' page
-            await Page.Locator(".oxd-main-menu-item:has-text('Admin')").ClickAsync();
+            // 2. Add an image
+            await Page.Locator("input[type=file]").SetInputFilesAsync(@"Data\Img\playwright.png");
 
-            // 3. Search Username and then click 'Search' button
-            await Page.Locator(".oxd-input-group:has-text('Username') input").FillAsync("Admin");
-            await Page.Locator("button:has-text('Search')").ClickAsync();
-
-            // VP: Verify that the result return '(1) Record Found'
-            await Expect(Page.Locator(".orangehrm-horizontal-padding")).ToContainTextAsync("(1) Record Found");
-
+            // VP: Verify that the 'src' attribute is changed default value 'user-default'
+            await Expect(Page.Locator("img.employee-image")).Not.ToHaveAttributeAsync("src", new Regex("user-default"));
         }
+
+
+        [Test]
+        public async Task Upload_ByFileChooser()
+        {
+            // 1. Navigate to 'Add Employee' page
+            await Page.GotoAsync("/web/index.php/pim/addEmployee");
+
+            // 2. Add an image
+            await Page.Locator("input[type=file]").SetInputFilesAsync(@"Data\Img\playwright.png");
+
+            var fileChooser = await Page.RunAndWaitForFileChooserAsync(async () =>
+            {
+                await Page.Locator("button.employee-image-action").ClickAsync();
+            });
+
+            await fileChooser.SetFilesAsync(@"Data\Img\playwright.png");
+
+
+            // VP: Verify that the 'src' attribute is changed default value 'user-default'
+            await Expect(Page.Locator("img.employee-image")).Not.ToHaveAttributeAsync("src", new Regex("user-default"));
+        }
+
+
+
 
         public override BrowserNewContextOptions ContextOptions()
         {
@@ -39,7 +61,7 @@ namespace TechCon.Tests.Scripts._03
                     Width = 1920,
                     Height = 1080
                 },
-                //BaseURL = Params.PortalUrl,
+                BaseURL = Params.PortalUrl,
                 StorageStatePath = $"{IOHelpers.ProjectPath}/Settings/login.json"
             };
         }

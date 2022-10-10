@@ -20,6 +20,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Update="Data\Img\playwright.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Settings\login.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	  <None Update="Settings\test.runsettings">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>

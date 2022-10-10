@@ -22,7 +22,6 @@
 			<Headless>false</Headless>
 			<!--<Channel>msedge</Channel>-->
 		</LaunchOptions>
-		<StorageStatePath>.\Settings\login.json</StorageStatePath>
 		
 	</Playwright>
 	
@@ -33,7 +32,7 @@
 	
 	<!-- Parameters used by tests at run time -->
 	<TestRunParameters>
-		<Parameter name="PortalUrl" value="https://opensource-demo.orangehrmlive.com/" />
+		<Parameter name="PortalUrl" value="https://opensource-demo.orangehrmlive.com" />
 		<Parameter name="BrowserName" value ="Chrome" />
 		<!--<Parameter name="BrowserName" value ="Firefox" />-->
 		<!--<Parameter name="BrowserName" value ="Edge" />-->
