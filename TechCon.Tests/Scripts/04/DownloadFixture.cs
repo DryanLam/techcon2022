@@ -9,8 +9,9 @@ namespace TechCon.Tests.Scripts
     public class DownloadFixture : PageTest
     {
         [Test]
-        public async Task Download_ByPath()
+        public async Task DownloadFile()
         {
+            // https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates
             // 1. Navigate to 'View Candidates' page
             await Page.GotoAsync("/web/index.php/recruitment/viewCandidates");
 
@@ -34,13 +35,17 @@ namespace TechCon.Tests.Scripts
                 await Page.Locator(".bi-download").ClickAsync();
 
             });
-
             await exportFile.SaveAsAsync(downloadFile);
 
-            // VP: Verify that "Techcon.pdf" file is downloaded successfully
+            //VP: Verify that "Techcon.pdf" file is downloaded successfully
             FileAssert.Exists(downloadFile, "File did NOT download successfully!");
 
         }
+
+
+
+
+
 
 
 
