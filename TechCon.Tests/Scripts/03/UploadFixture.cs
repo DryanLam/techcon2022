@@ -1,12 +1,7 @@
 ﻿using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using TechCon.Tests.Data;
 using TechCon.Tests.Utils.Helpers;
 
@@ -35,8 +30,6 @@ namespace TechCon.Tests.Scripts
             await Page.GotoAsync("/web/index.php/pim/addEmployee");
 
             // 2. Add an image
-            await Page.Locator("input[type=file]").SetInputFilesAsync(@"Data\Img\playwright.png");
-
             var fileChooser = await Page.RunAndWaitForFileChooserAsync(async () =>
             {
                 await Page.Locator("button.employee-image-action").ClickAsync();
