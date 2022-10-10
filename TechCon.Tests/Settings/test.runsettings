@@ -16,12 +16,13 @@
 	<Playwright>
 		<BrowserName>chromium</BrowserName>
 		<!--<BrowserName>firefox</BrowserName>-->
-		<ActionTimeout>60000</ActionTimeout>
-		<ExpectTimeout>10000</ExpectTimeout>
+		<ActionTimeout>15000</ActionTimeout>
+		<ExpectTimeout>15000</ExpectTimeout>
 		<LaunchOptions>
 			<Headless>false</Headless>
 			<!--<Channel>msedge</Channel>-->
 		</LaunchOptions>
+		<StorageStatePath>.\Settings\login.json</StorageStatePath>
 		
 	</Playwright>
 	
