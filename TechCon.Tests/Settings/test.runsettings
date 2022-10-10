@@ -32,13 +32,13 @@
 	
 	<!-- Parameters used by tests at run time -->
 	<TestRunParameters>
-		<Parameter name="PortalUrl" value="http://10.10.2.11:48107/KeyfactorPortal/Workspace/Dashboard" />
+		<Parameter name="PortalUrl" value="https://opensource-demo.orangehrmlive.com/" />
 		<Parameter name="BrowserName" value ="Chrome" />
 		<!--<Parameter name="BrowserName" value ="Firefox" />-->
 		<!--<Parameter name="BrowserName" value ="Edge" />-->
-		<Parameter name="AdminUsername" value="kms\administrator" />
-		<Parameter name="AdminPassword" value="Cheese22" />
-		<Parameter name="ActionTimeout" value ="120000" />
+		<Parameter name="Username" value="Admin" />
+		<Parameter name="Password" value="admin123" />
+		<Parameter name="ActionTimeout" value ="30000" />
 		<Parameter name="TraceView" value ="false" />
 	</TestRunParameters>
 
