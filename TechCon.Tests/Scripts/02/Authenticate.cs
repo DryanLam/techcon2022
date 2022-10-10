@@ -17,7 +17,7 @@ namespace TechCon.Tests.Scripts
                 SlowMo = 2000
             });
 
-            var context = await browser.NewContextAsync(new()
+            var context = await browser.NewContextAsync(new BrowserNewContextOptions()
             {
                 ViewportSize = new ViewportSize()
                 {
