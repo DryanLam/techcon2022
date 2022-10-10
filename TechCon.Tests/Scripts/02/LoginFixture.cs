@@ -14,8 +14,7 @@ namespace TechCon.Tests.Scripts
             using var playwright = await Playwright.CreateAsync();
             await using var browser = await playwright.Chromium.LaunchAsync(new()
             {
-                Headless = false,
-                SlowMo = 2000
+                Headless = false
             });
 
             var context = await browser.NewContextAsync(new()
