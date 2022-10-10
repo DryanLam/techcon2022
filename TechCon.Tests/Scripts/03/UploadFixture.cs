@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using TechCon.Tests.Data;
 using TechCon.Tests.Utils.Helpers;
 
-namespace TechCon.Tests.Scripts._03
+namespace TechCon.Tests.Scripts
 {
     public class UploadFixture : PageTest
     {

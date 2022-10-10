@@ -1,7 +1,6 @@
 ﻿using Microsoft.Playwright;
 using NUnit.Framework;
 using TechCon.Tests.Data;
-using TechCon.Tests.Utils.Helpers;
 
 namespace TechCon.Tests.Scripts
 {

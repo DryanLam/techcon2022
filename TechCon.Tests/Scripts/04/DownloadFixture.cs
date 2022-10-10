@@ -4,14 +4,14 @@ using NUnit.Framework;
 using TechCon.Tests.Data;
 using TechCon.Tests.Utils.Helpers;
 
-namespace TechCon.Tests.Scripts._04
+namespace TechCon.Tests.Scripts
 {
     public class DownloadFixture : PageTest
     {
         [Test]
         public async Task Download_ByPath()
         {
-            // 1. Navigate to 'Add Employee' page
+            // 1. Navigate to 'View Candidates' page
             await Page.GotoAsync("/web/index.php/recruitment/viewCandidates");
 
             // 2. Select 'QA Lead' under Job Title
