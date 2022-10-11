@@ -1,16 +1,1 @@
-{
-  "cookies": [
-    {
-      "name": "orangehrm",
-      "value": "0d055ff5002348461cf2666b87f06fe7",
-      "domain": "opensource-demo.orangehrmlive.com",
-      "path": "/web",
-      "expires": -1,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "Strict"
-    }
-  ],
-  "origins": [
-  ]
-}
+{"cookies":[{"name":"orangehrm","value":"d07e84965a542d42f09cb776a4c81820","domain":"opensource-demo.orangehrmlive.com","path":"/web","expires":-1,"httpOnly":true,"secure":true,"sameSite":"Strict"}],"origins":[]}

@@ -21,21 +21,5 @@ namespace TechCon.Tests.Scripts
             // VP: Verify that the iframe is containing 'Let's have some different text!' value
             await Expect(Page.Locator("#no-downloads")).ToContainTextAsync("No search results found");
         }
-
-
-        // Selectors
-        // https://playwright.dev/docs/selectors
-        // https://www.w3.org/TR/wai-aria-1.2/#role_definitions
-        // https://datatables.net/
-        // role=textbox
-        // role=searchbox
-        // .dtr-data:below(td:text-is('Airi Satou')) >> nth=0
-        // td:right-of(td:text-is('Airi Satou')) >> nth = 0
-        // css=#example_wrapper >> role=searchbox
-        // css=#example_wrapper >> xpath=//tbody >> css=td:nth-child(5)
-
-
-
-
     }
 }
